@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+    .frame {
+    border: 3px solid;
+    }
+    </style>
+    <h1 style="font-style: italic">Информация о сотруднике:</h1><br>
+    <b>Имя: </b>{{ employee.name }}<br>
+    <b>Фамилия: </b>{{ employee.surname}}<br>
+    <b>Фото: </b><img src="{{ employee.img.url }}" class="frame" height ="200px"><br>
+    <div class="album py-0 bg-light">
+        <div class="container">
+             <div class="row">
+                {% for reserv in reservs %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                                <b>Workplace: </b>{{ reserv.place }}<br>
+                                <b>Start time: </b>{{ reserv.start_time }}<br>
+                                <b>End time: </b>{{ reserv.end_time }}<br>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+             </div>
+        </div>
+    </div>
+{% endblock %}

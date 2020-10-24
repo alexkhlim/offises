@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Введите, на какие числа хотите выбрать бронь рабочего места:</h1>
+<form  method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <p>who:</p>
+        <p>
+        <select size="3" name="who">
+            {% for employee in employees %}
+                <option value="{{ employee.id }}">{{ employee }}</option>
+            {% endfor %}
+        </select>
+        </p>
+
+
+    <p>start_time: <input type="date" name="start_time"></p>
+    <p>end_time: <input type="date" name="end_time"></p>
+<button type="submit">Save</button>
+</form>
+{% endblock %}

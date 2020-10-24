@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <head>На какие числа хотите узнать бронь?</head>
+
+    <form action="{% url 'search' %}" method="get">
+        <p>Start time<input name="start" type="date" placeholder="year-month-day"></p>
+        <p>End time<input name="end" type="date" placeholder="year-month-day"></p>
+        <button type="submit" href="">Save</button>
+    </form>
+
+
+{% endblock %}

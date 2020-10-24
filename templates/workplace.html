@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+    .frame {
+    border: 3px solid;
+    }
+    </style>
+    <div class="album py-0 bg-light">
+        <div class="container">
+             <div class="row">
+                 {% for workplace in workplaces %}
+                         <div class="col-md-4">
+                             <div class="card mb-4 shadow-sm">
+                                 <div class="card-body">
+                                         <b>Office number: </b>{{ workplace.which_office}}<br>
+                                         <b>The number of workplace: </b>{{ workplace.number_workplace}}<br>
+                                         {% if workplace.occupied == False %}
+                                            <b>Free</b>
+                                             <div class="d-flex justify-content-between align-items-center">
+                                                 <div class="btn-group">
+                                                     <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'reserved_create' workplace.id %}">Take the place</a></button>
+                                                 </div>
+                                             </div>
+                                         {% else %}
+                                            <b>Occupied </b>
+                                         {% endif %}
+                                 </div>
+                             </div>
+                         </div>
+                 {% endfor %}
+             </div>
+        </div>
+    </div>
+{% endblock %}

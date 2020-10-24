@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <title>Main Page</title>
+</head>
+<link href="https://getbootstrap.com/docs/4.5/examples/product/product.css" rel="stylesheet">
+<body>
+<nav class="site-header sticky-top py-1">
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="btn btn-sm btn-outline-secondary" href="/employees">Сотрудники</a>
+    <a class="btn btn-sm btn-outline-secondary" href='/buildings'>Главная страница</a>
+    <a class="btn btn-sm btn-outline-secondary" href="/searchres">API</a>
+  </div>
+</nav>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="position-relative p-3 p-md-5 m-md-3 text-center bg-light">
+    <p class="lead font-weight-normal">
+{% block content %}{% endblock %}
+    </p>
+  </div>
+
+</div>
+
+
+</body>
+</html>

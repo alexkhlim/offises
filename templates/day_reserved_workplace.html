@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="album py-0 bg-light">
+        <div class="container">
+             <div class="row">
+                {% for workplace in object_list %}
+                     <div class="col-md-4">
+                         <div class="card mb-4 shadow-sm">
+                             <div class="card-body">
+                                     <b>Office number: </b>{{ workplace.which_office}}<br>
+                                     <b>The number of workplace: </b>{{ workplace.number_workplace}}<br>
+                             </div>
+                        </div>
+                    </div>
+                 {% endfor %}
+                 </div>
+             </div>
+         </div>
+
+{% endblock %}
